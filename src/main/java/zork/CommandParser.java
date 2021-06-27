@@ -25,16 +25,23 @@ public class CommandParser {
 
     // "attack with a valid weapon"
     public List<String> parse(String stringInput){
-        String cleannedInput = stringInput.trim();
-        String cmd = matchInputToCommand(cleannedInput);
+        String cleanedInput = stringInput.trim(); //eliminating spaces in front and end
+        String cmd = matchInputToCommand(cleanedInput);
         Command command = CommandFactory.get(cmd);
+        if (command == null){
+            //handle invalid command
+            cmd = matchInputToCommand("invalid");
+            command = CommandFactory.get(cmd);
+        }
+
         if (command.numArgs() > 0){
-            //TODO : do some checking for sapce later
+            //TODO : do some checking for space later
             //TODO : handle valid args
-            String argString = cleannedInput.substring(cmd.length()+1);
+            String argString = cleanedInput.substring(cmd.length()+1);
             System.out.println(argString);
             return Arrays.asList(cmd, argString);
         }else{
+            System.out.println("checking "+ cmd ); // TODO : GET IT OUT
             return Arrays.asList(cmd);
         }
     }

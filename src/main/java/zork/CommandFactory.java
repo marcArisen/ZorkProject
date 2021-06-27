@@ -2,16 +2,23 @@ package zork;
 
 import zork.command.Command;
 import zork.command.ExitCommand;
+import zork.command.InfoCommand;
+import zork.command.InvalidCommand;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 public class CommandFactory {
 
-
+    //TODO : add all commands
     private static final List<Class<? extends Command>> REGISTERED_COMMANDS = Arrays.asList(
-            ExitCommand.class
+            ExitCommand.class,
+            InfoCommand.class,
+            InvalidCommand.class
 
     );
 
