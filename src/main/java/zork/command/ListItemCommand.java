@@ -1,5 +1,6 @@
 package zork.command;
 
+import zork.Colour;
 import zork.Game;
 import zork.items.Item;
 
@@ -14,7 +15,7 @@ public class ListItemCommand implements Command{
     @Override
     public void execute(Game game, List<String> args) {
         for (Item item : game.getGamePlayer().getInventory()){
-            game.getOutput().println(item.getName() + " : " + item.getDescription());
+            game.getOutput().println(Colour.BLUE + item.getName() + " : " + item.getDescription());
         }
     }
 

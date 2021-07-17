@@ -36,10 +36,8 @@ public class CommandParser {
 
         if (command.numArgs() > 0){
             String argString = cleanedInput.substring(cmd.length()+1);
-           // System.out.println(argString);
             return Arrays.asList(cmd, argString);
         }else{
-            //System.out.println("checking "+ cmd ); // TODO : GET IT OUT
             return Arrays.asList(cmd);
         }
     }

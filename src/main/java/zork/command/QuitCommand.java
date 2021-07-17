@@ -1,5 +1,6 @@
 package zork.command;
 
+import zork.Colour;
 import zork.Game;
 
 import java.util.List;
@@ -12,11 +13,13 @@ public class QuitCommand implements Command{
 
     @Override
     public void execute(Game game, List<String> args) {
-
+        game.getOutput().println(Colour.BLUE + "GO BACK TO THE MAIN MENU");
+        game.setStart(false);
+        game.backToMainMenu();
     }
 
     @Override
     public String getCommand() {
-        return null;
+        return "quit";
     }
 }

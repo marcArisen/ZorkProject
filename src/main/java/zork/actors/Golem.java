@@ -5,7 +5,7 @@ import zork.Location;
 
 public class Golem extends Monster{
 
-    public Golem(Game game, int MaxHP, int AttackDamage, Location location) {
-        super(game, 200, 40, location);
+    public Golem(Game game, Location location) {
+        super(game, 150, 30, location);
     }
 }

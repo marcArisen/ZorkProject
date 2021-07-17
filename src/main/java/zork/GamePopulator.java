@@ -1,8 +1,8 @@
 package zork;
 
-import zork.actors.Boss;
-import zork.actors.Monster;
-import zork.actors.Slime;
+import zork.actors.*;
+import zork.items.LegendarySword;
+import zork.items.Potion;
 import zork.items.SteelSword;
 
 public class GamePopulator {
@@ -12,7 +12,7 @@ public class GamePopulator {
         Location room2 = new Location("The Forrest");
         Location room3 = new Location("The ฺCave level 1");
         Location room4 = new Location("The Cave level 2");
-        Location room5 = new Location("BOSS ROOM");
+        Location room5 = new Location("LEGENDARY ROOOM");
         Location room6 = new Location("Plain Field");
         Location room7 = new Location("ROOM");
 
@@ -42,9 +42,17 @@ public class GamePopulator {
 
         Monster monster1 = new Slime(game,game.getMaps().get(1));
         Monster monster2 = new Slime(game,game.getMaps().get(2));
-        Monster bigboss = new Boss(game,game.getMaps().get(3));
+        Monster monster3 = new Golem(game,game.getMaps().get(3));
+        Monster monster4 = new Ghost(game,game.getMaps().get(4));
 
-        room2.setItem(new SteelSword());
+        Monster bigboss = new Boss(game,game.getMaps().get(0));
+
+        game.setBoss(bigboss);
+
+        room2.setItem(new Potion());
+        room4.setItem(new Potion());
+        room6.setItem(new SteelSword());
+        room5.setItem(new LegendarySword());
     }
 
 }

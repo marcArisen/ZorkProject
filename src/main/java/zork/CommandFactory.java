@@ -11,7 +11,6 @@ import java.util.stream.Collectors;
 
 public class CommandFactory {
 
-    //TODO : add all commands
     private static final List<Class<? extends Command>> REGISTERED_COMMANDS = Arrays.asList(
             ExitCommand.class,
             InfoCommand.class,
@@ -19,7 +18,10 @@ public class CommandFactory {
             AttackWithCommand.class,
             ListItemCommand.class,
             GoCommand.class,
-            TakeCommand.class
+            TakeCommand.class,
+            PlayCommand.class,
+            QuitCommand.class,
+            DropCommand.class
     );
 
     private static final Map<String,Command> COMMAND_MAPS = new HashMap<>();

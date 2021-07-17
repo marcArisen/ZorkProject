@@ -17,12 +17,33 @@ public abstract class Actor {
         this.location = location;
     }
 
+    public void setMaxHP(int maxHP) {
+        MaxHP = maxHP;
+    }
+
+    public void setCurrentHP(int currentHP) {
+        CurrentHP = currentHP;
+    }
+
     public void setLocation(Location location) {
         this.location = location;
     }
 
     public int getMaxHP() {
         return MaxHP;
+    }
+
+    public void setCurrentHp(int number){
+        this.CurrentHP = number;
+    }
+
+    public void healHp(int number){
+        while (number > 0){
+            if (this.getCurrentHP() < this.getMaxHP()){
+                this.setCurrentHp(this.CurrentHP+1);
+            }
+            number--;
+        }
     }
 
     public Location getLocation() {

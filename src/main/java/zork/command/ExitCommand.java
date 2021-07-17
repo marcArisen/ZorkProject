@@ -1,5 +1,6 @@
 package zork.command;
 
+import zork.Colour;
 import zork.Game;
 
 import java.util.List;
@@ -15,7 +16,7 @@ public class ExitCommand implements Command{
 
     @Override
     public void execute(Game game, List<String> args) {
-        game.getOutput().println("GAME EXIT");
+        game.getOutput().println(Colour.RED + "GAME EXIT");
         game.exit();
     }
 

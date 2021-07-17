@@ -1,5 +1,6 @@
 package zork.command;
 
+import zork.Colour;
 import zork.Game;
 import zork.NullLocation;
 import zork.actors.Player;
@@ -32,32 +33,32 @@ public class GoCommand implements Command{
         int direction = identifyDirection(args);
 
         if (direction == 0){
-            game.getOutput().println("that is not a direction");
+            game.getOutput().println(Colour.RED + "that is not a direction");
         } else if (direction == 1){
             if (player.getLocation().getUp() != NullLocation.getInstance()) {
                 player.move(player.getLocation().getUp());
-                game.getOutput().println("Player currently in " + player.getLocation().getNameOfLocation());
+                game.getOutput().println(Colour.YELLOW + "Player currently in " + player.getLocation().getNameOfLocation());
             } else {
                 game.getOutput().println("you cannot go in that way!!");
             }
         } else if (direction == 2){
             if (player.getLocation().getDown() != NullLocation.getInstance()) {
                 player.move(player.getLocation().getDown());
-                game.getOutput().println("Player currently in " + player.getLocation().getNameOfLocation());
+                game.getOutput().println(Colour.YELLOW +"Player currently in " + player.getLocation().getNameOfLocation());
             } else {
                 game.getOutput().println("you cannot go in that way!!");
             }
         } else if (direction == 3){
             if (player.getLocation().getLeft() != NullLocation.getInstance()) {
                 player.move(player.getLocation().getLeft());
-                game.getOutput().println("Player currently in " + player.getLocation().getNameOfLocation());
+                game.getOutput().println(Colour.YELLOW + "Player currently in " + player.getLocation().getNameOfLocation());
             } else {
                 game.getOutput().println("you cannot go in that way!!");
             }
         } else if (direction == 4){
             if (player.getLocation().getRight() != NullLocation.getInstance()) {
                 player.move(player.getLocation().getRight());
-                game.getOutput().println("Player currently in " + player.getLocation().getNameOfLocation());
+                game.getOutput().println(Colour.YELLOW + "Player currently in " + player.getLocation().getNameOfLocation());
             } else {
                 game.getOutput().println("you cannot go in that way!!");
             }
