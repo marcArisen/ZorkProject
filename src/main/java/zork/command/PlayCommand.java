@@ -21,7 +21,10 @@ public class PlayCommand implements OutGameCommand{
         game.getGamePlayer().setLocation(game.getMaps().get(0));
         game.getOutput().println(Colour.GREEN + "game start!!!!!");
         game.setStart(true);
-
+        game.getOutput().println(Colour.BLUE + "There is BOSS monster ruling your village !!!!");
+        game.getOutput().println("You have to defeat the boss in order to secure your hometown");
+        game.getOutput().println("But your power alone is not enough");
+        game.getOutput().println("Hint : go to the legendary place to take the legendary sword");
     }
 
     @Override
